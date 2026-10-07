@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Guematria Cósmica</title>
+
+    <!-- CSS LOCAL -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         CONTEÚDO PRINCIPAL
+    ========================================== -->
+
+    <main class="container">
+
+
+        <!-- ==========================================
+             CABEÇALHO
+        ========================================== -->
+
+        <header class="cabecalho">
+
+            <h1>GUEMATRIA CÓSMICA</h1>
+
+            <p>
+                Descubra os números presentes em cada combinação
+                de letras através dos ciclos do passado, presente
+                e futuro.
+            </p>
+
+
+            <!-- ======================================
+                 MENU
+            ======================================= -->
+
+            <div class="menu-gc">
+
+                <button
+                    id="botaoAlfabeto"
+                    class="botao-menu"
+                    type="button"
+                >
+                    🔤 ALFABETO
+                </button>
+
+
+                <button
+                    id="botaoGuia"
+                    class="botao-menu"
+                    type="button"
+                >
+                    ? GUIA DA GC
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==========================================
+             PAINEL DE ANÁLISE
+        ========================================== -->
+
+        <section class="painel">
+
+            <label for="texto">
+                Digite uma palavra ou frase
+            </label>
+
+
+            <input
+                type="text"
+                id="texto"
+                placeholder="Exemplo: PAI E MÃE"
+                autocomplete="off"
+            >
+
+
+            <button
+                id="botaoAnalisar"
+                type="button"
+            >
+                ANALISAR
+            </button>
+
+        </section>
+
+
+        <!-- ==========================================
+             RESULTADO
+
+             O SCRIPT.JS APENAS PREENCHE OS VALORES.
+
+             A POSIÇÃO DAS CAIXAS E DAS LINHAS É
+             CONTROLADA PELO CSS.
+
+             A ÁREA DAS LETRAS É A ÚNICA PARTE QUE
+             PODE VARIAR CONFORME O TAMANHO DA PALAVRA,
+             UTILIZANDO ROLAGEM HORIZONTAL.
+        ========================================== -->
+
+        <section
+            class="resultado"
+            id="resultado"
+            aria-live="polite"
+        >
+
+            <div class="resultado-inicial">
+
+                <p>
+                    Digite uma palavra ou frase para iniciar
+                    a análise.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ==========================================
+         MODAL — ALFABETO CÓSMICO
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="modalAlfabeto"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-conteudo"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="tituloAlfabeto"
+        >
+
+
+            <!-- FECHAR -->
+
+            <button
+                class="fechar-modal"
+                id="fecharAlfabeto"
+                aria-label="Fechar alfabeto"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <!-- TÍTULO -->
+
+            <h2 id="tituloAlfabeto">
+                ALFABETO CÓSMICO
+            </h2>
+
+
+            <p class="modal-descricao">
+
+                Sistema de referência utilizado para atribuir
+                os valores numéricos de cada letra na
+                Guematria Cósmica.
+
+            </p>
+
+
+            <!-- ======================================
+                 IMAGEM DO ALFABETO
+            ======================================= -->
+
+            <div class="imagem-alfabeto">
+
+                <img
+                    src="imagens/imagensalfabeto-gc.jpeg.jpeg"
+                    alt="Alfabeto Cósmico da Guematria Cósmica"
+                >
+
+            </div>
+
+
+            <!-- ======================================
+                 CONSULTA RÁPIDA
+            ======================================= -->
+
+            <p class="titulo-consulta">
+                CONSULTA RÁPIDA
+            </p>
+
+
+            <div class="grade-alfabeto">
+
+
+                <div class="item-alfabeto">
+                    <strong>A</strong>
+                    <span>3</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>B</strong>
+                    <span>3</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>C</strong>
+                    <span>2</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>D</strong>
+                    <span>2</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>E</strong>
+                    <span>3</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>F</strong>
+                    <span>3</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>G</strong>
+                    <span>3</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>H</strong>
+                    <span>3</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>I</strong>
+                    <span>1</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>J</strong>
+                    <span>3</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>K</strong>
+                    <span>3</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>L</strong>
+                    <span>2</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>M</strong>
+                    <span>3</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>N</strong>
+                    <span>3</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>O</strong>
+                    <span>1</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>P</strong>
+                    <span>2</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>Q</strong>
+                    <span>2</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>R</strong>
+                    <span>3</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>S</strong>
+                    <span>2</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>T</strong>
+                    <span>3</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>U</strong>
+                    <span>2</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>V</strong>
+                    <span>2</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>W</strong>
+                    <span>3</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>X</strong>
+                    <span>4</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>Y</strong>
+                    <span>3</span>
+                </div>
+
+                <div class="item-alfabeto">
+                    <strong>Z</strong>
+                    <span>3</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         MODAL — GUIA DA GC
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="modalGuia"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-conteudo"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="tituloGuia"
+        >
+
+
+            <!-- FECHAR -->
+
+            <button
+                class="fechar-modal"
+                id="fecharGuia"
+                aria-label="Fechar guia"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <!-- TÍTULO -->
+
+            <h2 id="tituloGuia">
+                GUIA DA GUEMATRIA CÓSMICA
+            </h2>
+
+
+            <p class="modal-descricao">
+
+                A Guematria Cósmica trabalha com
+                três dimensões numéricas: passado,
+                presente e futuro.
+
+            </p>
+
+
+
+            <!-- ======================================
+                 BASE — PRESENTE
+            ======================================= -->
+
+            <p class="titulo-consulta">
+                BASE DO PRESENTE
+            </p>
+
+
+            <!-- L -->
+
+            <div class="guia-item">
+
+                <div class="guia-letra azul">
+                    L
+                </div>
+
+                <div>
+
+                    <h3>L — Letras</h3>
+
+                    <p>
+                        Representa a quantidade total de letras
+                        presentes na palavra ou frase analisada.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- V1 -->
+
+            <div class="guia-item">
+
+                <div class="guia-letra azul">
+                    V1
+                </div>
+
+                <div>
+
+                    <h3>V1 — Valor Total</h3>
+
+                    <p>
+                        Representa a soma de todos os valores
+                        correspondentes às letras, de acordo com
+                        o Alfabeto Cósmico.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 CAMINHO DO FUTURO
+            ======================================= -->
+
+            <p class="titulo-consulta">
+                CAMINHO DO FUTURO
+            </p>
+
+
+            <!-- V2 -->
+
+            <div class="guia-item">
+
+                <div class="guia-letra azul">
+                    V2
+                </div>
+
+                <div>
+
+                    <h3>V2 — Redução de V1</h3>
+
+                    <p>
+                        Representa a redução completa de V1.
+                        Os algarismos de V1 são somados e,
+                        caso o resultado ainda possua mais de
+                        um algarismo, o processo continua até
+                        restar apenas um número.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- C1 -->
+
+            <div class="guia-item">
+
+                <div class="guia-letra vermelho">
+                    C1
+                </div>
+
+                <div>
+
+                    <h3>C1 — Combinação do Futuro</h3>
+
+                    <p>
+                        É formado pela soma:
+                        <br><br>
+                        <strong>L + V2</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- R1 -->
+
+            <div class="guia-item">
+
+                <div class="guia-letra dourado">
+                    R1
+                </div>
+
+                <div>
+
+                    <h3>R1 — Resultado do Futuro</h3>
+
+                    <p>
+                        Representa a redução completa de C1.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 CAMINHO DO PASSADO
+            ======================================= -->
+
+            <p class="titulo-consulta">
+                CAMINHO DO PASSADO
+            </p>
+
+
+            <!-- C2 -->
+
+            <div class="guia-item">
+
+                <div class="guia-letra vermelho">
+                    C2
+                </div>
+
+                <div>
+
+                    <h3>C2 — Combinação do Passado</h3>
+
+                    <p>
+                        É formado pela soma direta:
+                        <br><br>
+                        <strong>V1 + L</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- R2 -->
+
+            <div class="guia-item">
+
+                <div class="guia-letra dourado">
+                    R2
+                </div>
+
+                <div>
+
+                    <h3>R2 — Resultado do Passado</h3>
+
+                    <p>
+                        Representa a redução completa de C2.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 ENCONTRO
+            ======================================= -->
+
+            <p class="titulo-consulta">
+                ENCONTRO DO PASSADO E DO FUTURO
+            </p>
+
+
+            <!-- R3 -->
+
+            <div class="guia-item">
+
+                <div class="guia-letra vermelho">
+                    R3
+                </div>
+
+                <div>
+
+                    <h3>R3 — Encontro</h3>
+
+                    <p>
+                        Representa a soma direta entre os
+                        resultados dos dois caminhos:
+                        <br><br>
+                        <strong>R1 + R2</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- R4 -->
+
+            <div class="guia-item">
+
+                <div class="guia-letra dourado">
+                    R4
+                </div>
+
+                <div>
+
+                    <h3>R4 — Resultado Final</h3>
+
+                    <p>
+                        R4 é a simplificação completa de R3.
+                        Ele representa o resultado final do
+                        encontro entre passado e futuro no
+                        presente.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 RESUMO FINAL
+            ======================================= -->
+
+            <p class="titulo-consulta">
+                ESTRUTURA COMPLETA
+            </p>
+
+
+            <div class="guia-item">
+
+                <div class="guia-letra azul">
+                    GC
+                </div>
+
+                <div>
+
+                    <h3>Fluxo da Guematria Cósmica</h3>
+
+                    <p>
+                        A análise parte de L e V1.
+                        V1 segue pelo caminho do futuro:
+                        <br><br>
+                        <strong>
+                            V1 → V2 → C1 → R1
+                        </strong>
+                        <br><br>
+                        Simultaneamente, V1 segue pelo caminho
+                        do passado:
+                        <br><br>
+                        <strong>
+                            V1 → C2 → R2
+                        </strong>
+                        <br><br>
+                        Os dois ciclos se encontram em:
+                        <br><br>
+                        <strong>
+                            R3 = R1 + R2
+                        </strong>
+                        <br><br>
+                        A redução de R3 gera R4.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         JAVASCRIPT LOCAL
+    ========================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

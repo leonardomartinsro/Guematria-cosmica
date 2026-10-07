@@ -1,0 +1,10 @@
+{
+    "name": "Guematria Cósmica",
+    "short_name": "GC",
+    "description": "Sistema de análise da Guematria Cósmica.",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#0b0d10",
+    "theme_color": "#0b0d10",
+    "lang": "pt-BR"
+}

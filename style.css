@@ -1,0 +1,1616 @@
+/* ==========================================
+   CONFIGURAÇÕES GERAIS
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f5f1e8;
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(224, 167, 77, 0.16),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 8% 35%,
+            rgba(63, 152, 201, 0.13),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 92% 55%,
+            rgba(224, 167, 77, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(63, 152, 201, 0.08),
+            transparent 34%
+        ),
+        #07090c;
+
+    background-attachment: fixed;
+}
+
+
+/* ==========================================
+   FUNDO ESTRELADO
+========================================== */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+    opacity: 0.38;
+
+    background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.95) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.55) 1px, transparent 1px),
+        radial-gradient(circle, rgba(224, 167, 77, 0.75) 1px, transparent 1px);
+
+    background-size:
+        75px 75px,
+        145px 145px,
+        235px 235px;
+
+    background-position:
+        0 0,
+        35px 55px,
+        110px 125px;
+
+    z-index: -1;
+}
+
+
+/* Nebulosidade suave */
+
+body::after {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 18%,
+            rgba(255, 255, 255, 0.035),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 50% 60%,
+            rgba(224, 167, 77, 0.025),
+            transparent 42%
+        );
+
+    z-index: -1;
+}
+
+
+/* ==========================================
+   CONTAINER PRINCIPAL
+========================================== */
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+    padding: 42px 20px 60px;
+}
+
+
+/* ==========================================
+   CABEÇALHO
+========================================== */
+
+.cabecalho {
+    position: relative;
+
+    text-align: center;
+
+    margin-bottom: 42px;
+}
+
+.cabecalho::before {
+    content: "";
+
+    display: block;
+
+    width: 90px;
+    height: 1px;
+
+    margin: 0 auto 20px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #e0a74d,
+        transparent
+    );
+
+    box-shadow: 0 0 12px rgba(224, 167, 77, 0.45);
+}
+
+.cabecalho h1 {
+    font-size: clamp(2rem, 7vw, 3.7rem);
+
+    margin-bottom: 13px;
+
+    letter-spacing: clamp(3px, 1vw, 7px);
+    text-transform: uppercase;
+
+    color: #f7f2e7;
+
+    text-shadow:
+        0 0 8px rgba(224, 167, 77, 0.18),
+        0 0 28px rgba(224, 167, 77, 0.12);
+
+    line-height: 1.05;
+}
+
+.cabecalho p {
+    max-width: 590px;
+
+    margin: 0 auto;
+
+    color: #aeb8c2;
+
+    font-size: 0.98rem;
+    line-height: 1.7;
+
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ==========================================
+   MENU
+========================================== */
+
+.menu-gc {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 24px;
+}
+
+.botao-menu {
+    min-width: 145px;
+
+    padding: 11px 18px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(224, 167, 77, 0.09),
+            rgba(63, 152, 201, 0.055)
+        );
+
+    color: #e9dfcc;
+
+    border: 1px solid rgba(224, 167, 77, 0.38);
+    border-radius: 7px;
+
+    font-size: 0.78rem;
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 5px 18px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.22s ease,
+        color 0.22s ease,
+        background 0.22s ease,
+        border-color 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+.botao-menu:hover {
+    transform: translateY(-2px);
+
+    color: #fff4d8;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(224, 167, 77, 0.17),
+            rgba(63, 152, 201, 0.09)
+        );
+
+    border-color: rgba(224, 167, 77, 0.70);
+
+    box-shadow:
+        0 0 20px rgba(224, 167, 77, 0.10),
+        0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.botao-menu:active {
+    transform: translateY(0) scale(0.97);
+}
+
+
+/* ==========================================
+   PAINEL PRINCIPAL
+========================================== */
+
+.painel {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(24, 29, 34, 0.96),
+            rgba(9, 13, 17, 0.94)
+        );
+
+    border: 1px solid rgba(224, 167, 77, 0.30);
+    border-radius: 14px;
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.42),
+        0 0 35px rgba(224, 167, 77, 0.045),
+        inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    overflow: hidden;
+}
+
+.painel::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 8%;
+    right: 8%;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(224, 167, 77, 0.65),
+        transparent
+    );
+
+    box-shadow: 0 0 14px rgba(224, 167, 77, 0.25);
+}
+
+.painel label {
+    color: #e8dfd0;
+
+    font-size: 0.82rem;
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.painel input {
+    width: 100%;
+
+    padding: 16px 17px;
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 8, 11, 0.92),
+            rgba(13, 17, 21, 0.92)
+        );
+
+    color: #fff;
+
+    border: 1px solid rgba(174, 184, 194, 0.25);
+    border-radius: 8px;
+
+    outline: none;
+
+    box-shadow:
+        inset 0 2px 8px rgba(0, 0, 0, 0.30);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.painel input::placeholder {
+    color: #6f7a84;
+}
+
+.painel input:focus {
+    border-color: rgba(224, 167, 77, 0.72);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(8, 11, 14, 0.96),
+            rgba(16, 20, 24, 0.96)
+        );
+
+    box-shadow:
+        0 0 0 2px rgba(224, 167, 77, 0.07),
+        0 0 22px rgba(224, 167, 77, 0.08),
+        inset 0 2px 8px rgba(0, 0, 0, 0.30);
+}
+
+.painel button {
+    position: relative;
+
+    width: 100%;
+
+    padding: 15px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c9933f,
+            #e6b85d 50%,
+            #c9933f
+        );
+
+    color: #171108;
+
+    border: 1px solid rgba(255, 220, 143, 0.55);
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 22px rgba(0, 0, 0, 0.28),
+        0 0 18px rgba(224, 167, 77, 0.12);
+
+    transition:
+        transform 0.22s ease,
+        filter 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+.painel button:hover {
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 9px 28px rgba(0, 0, 0, 0.32),
+        0 0 28px rgba(224, 167, 77, 0.22);
+}
+
+.painel button:active {
+    transform: translateY(1px) scale(0.985);
+}
+
+
+/* ==========================================
+   RESULTADO
+========================================== */
+
+.resultado {
+    position: relative;
+
+    margin-top: 34px;
+    padding: 28px 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 23, 28, 0.95),
+            rgba(7, 11, 15, 0.94)
+        );
+
+    border: 1px solid rgba(224, 167, 77, 0.24);
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.38),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    overflow-x: auto;
+}
+
+.mensagem-erro {
+    color: #e8a6a6;
+}
+
+
+/* ==========================================
+   PEQUENOS DETALHES VISUAIS
+========================================== */
+
+.painel,
+.resultado {
+    animation: aparecerGC 0.55s ease both;
+}
+
+@keyframes aparecerGC {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .painel,
+    .resultado {
+        animation: none;
+    }
+}
+
+
+/* ==========================================
+   GUEMATRIA CÓSMICA
+   SISTEMA FIXO DE COORDENADAS
+
+   EIXO ESQUERDO:
+   50% - corredor
+
+   EIXO CENTRAL:
+   50%
+
+   EIXO DIREITO:
+   50% + corredor
+========================================== */
+
+.gc-molde {
+    position: relative;
+
+    width: 100%;
+    min-width: 760px;
+    max-width: 1000px;
+
+    height: 1480px;
+
+    margin: 30px auto 0;
+
+    --largura-caixa: 120px;
+    --altura-caixa: 100px;
+
+    --corredor: 260px;
+
+    --linha: 2px;
+    --ouro: #e0a74d;
+
+    overflow: visible;
+}
+
+
+/* ==========================================
+   CAIXAS
+========================================== */
+
+.gc-caixa {
+    position: absolute;
+
+    z-index: 10;
+
+    width: var(--largura-caixa);
+    min-height: var(--altura-caixa);
+
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    background: linear-gradient(
+        180deg,
+        rgba(26, 35, 42, 0.98),
+        rgba(10, 15, 20, 0.98)
+    );
+
+    border: 1px solid rgba(224, 167, 77, 0.70);
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 18px rgba(224, 167, 77, 0.12),
+        0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.gc-sigla {
+    color: var(--ouro);
+
+    font-size: 0.8rem;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.gc-caixa strong {
+    color: #f5f1e8;
+
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.gc-caixa small {
+    color: rgba(245, 241, 232, 0.60);
+
+    font-size: 0.72rem;
+}
+
+
+/* ==========================================
+   ESTRUTURAS INTERNAS
+
+   Não criam novos sistemas de coordenadas.
+========================================== */
+
+.gc-estrutura-fixa,
+.gc-passado,
+.gc-futuro,
+.gc-presente-final {
+    position: static;
+}
+
+
+/* ==========================================
+   L — TOPO CENTRAL
+========================================== */
+
+.gc-l {
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+
+/* ==========================================
+   ANÁLISE
+
+   A análise ocupa exclusivamente a região
+   central.
+
+   Nenhuma linha lateral passa por cima dela.
+========================================== */
+
+.gc-letras-area {
+    position: absolute;
+
+    z-index: 5;
+
+    top: 145px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 420px;
+
+    padding: 20px 15px 0;
+
+    text-align: center;
+}
+
+.gc-texto-analisado {
+    width: 100%;
+    min-height: 1.5em;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #f5f1e8;
+
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+
+/* ==========================================
+   LETRAS
+========================================== */
+
+.gc-letras {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    padding: 10px 10px 45px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: thin;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+/*
+   Quando as letras ultrapassarem a largura disponível,
+   a rolagem horizontal continua funcionando normalmente.
+   O conteúdo passa a ocupar a largura necessária.
+*/
+.gc-letras > * {
+    flex-shrink: 0;
+}
+
+.gc-letra {
+    position: relative;
+
+    z-index: 5;
+
+    min-width: 42px;
+
+    flex-shrink: 0;
+
+    padding: 7px 5px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 4px;
+
+    background: rgba(16, 22, 27, 0.98);
+
+    border: 1px solid rgba(63, 152, 201, 0.55);
+    border-radius: 7px;
+}
+
+.gc-letra-nome {
+    color: #f5f1e8;
+    font-weight: bold;
+}
+
+.gc-letra-valor {
+    color: var(--ouro);
+
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.gc-fio-letra {
+    position: absolute;
+
+    width: 1px;
+    height: 35px;
+
+    left: 50%;
+    top: 100%;
+
+    transform: translateX(-50%);
+
+    background: var(--ouro);
+}
+
+
+/* ==========================================
+   COLETOR DAS LETRAS
+
+   ANÁLISE → V1
+
+   Esta é a única conexão direta da análise
+   com uma caixa da estrutura.
+========================================== */
+
+.gc-coletor-letras {
+    position: relative;
+
+    width: 100%;
+    height: var(--linha);
+
+    background: var(--ouro);
+
+    box-shadow:
+        0 0 10px rgba(224, 167, 77, 0.45);
+}
+
+.gc-coletor-letras::after {
+    content: "";
+
+    position: absolute;
+
+    width: var(--linha);
+    height: 70px;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: var(--ouro);
+
+    box-shadow:
+        0 0 10px rgba(224, 167, 77, 0.45);
+}
+
+
+/* ==========================================
+   SISTEMA DOURADO — GEOMETRIA ORGANIZADA
+
+   As caixas permanecem exatamente nas mesmas
+   coordenadas.
+
+   As linhas passam a obedecer a uma única lógica:
+
+   1. eixo central;
+   2. dois corredores laterais;
+   3. níveis horizontais bem definidos;
+   4. conexões sempre terminando nas bordas
+      das caixas.
+
+   O resultado é uma estrutura mais limpa,
+   simétrica e visualmente intencional.
+========================================== */
+
+/* ------------------------------------------
+   L → BIFURCAÇÃO SUPERIOR
+------------------------------------------ */
+
+/* descida curta saindo exatamente da base de L */
+.gc-rota-l-passado {
+    position: absolute;
+
+    z-index: 1;
+
+    width: var(--linha);
+    height: 25px;
+
+    top: 100px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: var(--ouro);
+
+    box-shadow:
+        0 0 10px rgba(224, 167, 77, 0.45);
+}
+
+/* barra horizontal superior */
+.gc-rota-l-passado::before {
+    content: "";
+
+    position: absolute;
+
+    width: calc(var(--corredor) * 2);
+    height: var(--linha);
+
+    top: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: var(--ouro);
+
+    box-shadow:
+        0 0 10px rgba(224, 167, 77, 0.45);
+}
+
+/* corredor esquerdo descendo até o nível de V1 */
+.gc-rota-l-passado::after {
+    content: "";
+
+    position: absolute;
+
+    width: var(--linha);
+    height: 415px;
+
+    top: 25px;
+    left: calc(50% - var(--corredor));
+
+    transform: translateX(-50%);
+
+    background: var(--ouro);
+
+    box-shadow:
+        0 0 10px rgba(224, 167, 77, 0.45);
+}
+
+/* corredor direito */
+.gc-rota-l-futuro {
+    position: absolute;
+
+    z-index: 1;
+
+    width: var(--linha);
+    height: 515px;
+
+    top: 125px;
+    left: calc(50% + var(--corredor));
+
+    transform: translateX(-50%);
+
+    background: var(--ouro);
+
+    box-shadow:
+        0 0 10px rgba(224, 167, 77, 0.45);
+}
+
+
+/* ==========================================
+   V1 — CENTRO
+========================================== */
+
+.gc-v1 {
+    top: 390px;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+
+/* ==========================================
+   V1 → CORREDORES LATERAIS
+
+   A conexão sai somente da parte inferior
+   de V1 e se abre para os dois lados.
+
+              V1
+              │
+       ┌──────┴──────┐
+       │             │
+      C2             V2
+========================================== */
+
+.gc-divisao-rotas {
+    position: absolute;
+
+    z-index: 1;
+
+    width: var(--linha);
+    height: 50px;
+
+    top: 490px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: var(--ouro);
+
+    box-shadow:
+        0 0 10px rgba(224, 167, 77, 0.45);
+}
+
+.gc-divisao-rotas::after {
+    content: "";
+
+    position: absolute;
+
+    width: calc(var(--corredor) * 2);
+    height: var(--linha);
+
+    top: 50px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: var(--ouro);
+
+    box-shadow:
+        0 0 10px rgba(224, 167, 77, 0.45);
+}
+
+
+/* ==========================================
+   CONEXÃO DOS CORREDORES → C2 / V2
+
+   As linhas chegam exatamente na borda
+   superior das caixas.
+========================================== */
+
+.gc-linha-v1-c2,
+.gc-linha-v1-v2 {
+    position: absolute;
+
+    z-index: 1;
+
+    width: var(--linha);
+    height: 100px;
+
+    top: 540px;
+
+    transform: translateX(-50%);
+
+    background: var(--ouro);
+
+    box-shadow:
+        0 0 10px rgba(224, 167, 77, 0.45);
+}
+
+.gc-linha-v1-c2 {
+    left: calc(50% - var(--corredor));
+}
+
+.gc-linha-v1-v2 {
+    left: calc(50% + var(--corredor));
+}
+
+
+/* ==========================================
+   C2 / V2
+========================================== */
+
+.gc-c2 {
+    top: 640px;
+    left: calc(50% - var(--corredor));
+
+    transform: translateX(-50%);
+}
+
+.gc-v2 {
+    top: 640px;
+    left: calc(50% + var(--corredor));
+
+    transform: translateX(-50%);
+}
+
+
+/* ==========================================
+   C2 → R2
+========================================== */
+
+.gc-linha-c2-r2 {
+    position: absolute;
+
+    z-index: 1;
+
+    width: var(--linha);
+    height: 60px;
+
+    top: 740px;
+    left: calc(50% - var(--corredor));
+
+    transform: translateX(-50%);
+
+    background: var(--ouro);
+
+    box-shadow:
+        0 0 10px rgba(224, 167, 77, 0.45);
+}
+
+.gc-r2 {
+    top: 800px;
+    left: calc(50% - var(--corredor));
+
+    transform: translateX(-50%);
+}
+
+
+/* ==========================================
+   V2 → C1
+========================================== */
+
+.gc-linha-v2-c1 {
+    position: absolute;
+
+    z-index: 1;
+
+    width: var(--linha);
+    height: 60px;
+
+    top: 740px;
+    left: calc(50% + var(--corredor));
+
+    transform: translateX(-50%);
+
+    background: var(--ouro);
+
+    box-shadow:
+        0 0 10px rgba(224, 167, 77, 0.45);
+}
+
+.gc-c1 {
+    top: 800px;
+    left: calc(50% + var(--corredor));
+
+    transform: translateX(-50%);
+}
+
+
+/* ==========================================
+   C1 → R1
+========================================== */
+
+.gc-linha-c1-r1 {
+    position: absolute;
+
+    z-index: 1;
+
+    width: var(--linha);
+    height: 60px;
+
+    top: 900px;
+    left: calc(50% + var(--corredor));
+
+    transform: translateX(-50%);
+
+    background: var(--ouro);
+
+    box-shadow:
+        0 0 10px rgba(224, 167, 77, 0.45);
+}
+
+.gc-r1 {
+    top: 960px;
+    left: calc(50% + var(--corredor));
+
+    transform: translateX(-50%);
+}
+
+
+/* ==========================================
+   R2 / R1 → ENCONTRO
+
+   Agora os dois lados obedecem ao mesmo
+   nível de encontro.
+
+   R2 ─────────┐
+               │
+               R3
+               │
+   R1 ─────────┘
+========================================== */
+
+/* R2 desce até o nível horizontal */
+.gc-linha-r2-r3 {
+    position: absolute;
+
+    z-index: 1;
+
+    width: var(--linha);
+    height: 120px;
+
+    top: 900px;
+    left: calc(50% - var(--corredor));
+
+    transform: translateX(-50%);
+
+    background: var(--ouro);
+
+    box-shadow:
+        0 0 10px rgba(224, 167, 77, 0.45);
+}
+
+/* R2 → centro */
+.gc-linha-r2-r3::after {
+    content: "";
+
+    position: absolute;
+
+    width: var(--corredor);
+    height: var(--linha);
+
+    top: 120px;
+    left: 50%;
+
+    background: var(--ouro);
+
+    box-shadow:
+        0 0 10px rgba(224, 167, 77, 0.45);
+}
+
+
+/* R1 desce até o mesmo nível de encontro de R2 */
+.gc-linha-r1-r3 {
+    position: absolute;
+
+    z-index: 1;
+
+    width: var(--linha);
+    height: 120px;
+
+    top: 900px;
+    left: calc(50% + var(--corredor));
+
+    transform: translateX(-50%);
+
+    background: var(--ouro);
+
+    box-shadow:
+        0 0 10px rgba(224, 167, 77, 0.45);
+}
+
+/* R1 → centro */
+.gc-linha-r1-r3::after {
+    content: "";
+
+    position: absolute;
+
+    width: var(--corredor);
+    height: var(--linha);
+
+    top: 120px;
+    right: 50%;
+
+    background: var(--ouro);
+
+    box-shadow:
+        0 0 10px rgba(224, 167, 77, 0.45);
+}
+
+
+/* ==========================================
+   DESCIDA CENTRAL ATÉ R3
+========================================== */
+
+.gc-presente-final::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: 1;
+
+    width: var(--linha);
+    height: 120px;
+
+    top: 1020px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: var(--ouro);
+
+    box-shadow:
+        0 0 10px rgba(224, 167, 77, 0.45);
+}
+
+
+/* ==========================================
+   R3 — CENTRO
+========================================== */
+
+.gc-r3 {
+    top: 1140px;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+
+/* ==========================================
+   R3 → R4
+========================================== */
+
+.gc-linha-r3-r4 {
+    position: absolute;
+
+    z-index: 1;
+
+    width: var(--linha);
+    height: 60px;
+
+    top: 1240px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: var(--ouro);
+
+    box-shadow:
+        0 0 10px rgba(224, 167, 77, 0.45);
+}
+
+
+/* ==========================================
+   R4 — CENTRO FINAL
+========================================== */
+
+.gc-r4 {
+    top: 1300px;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+
+/* ==========================================
+   BRILHO UNIFICADO DAS LINHAS
+
+   Mantém todas as linhas com exatamente
+   o mesmo tratamento visual.
+========================================== */
+
+.gc-rota-l-passado,
+.gc-rota-l-passado::before,
+.gc-rota-l-passado::after,
+.gc-rota-l-futuro,
+.gc-divisao-rotas,
+.gc-divisao-rotas::after,
+.gc-linha-v1-c2,
+.gc-linha-v1-v2,
+.gc-linha-c2-r2,
+.gc-linha-v2-c1,
+.gc-linha-c1-r1,
+.gc-linha-r2-r3,
+.gc-linha-r2-r3::after,
+.gc-linha-r1-r3,
+.gc-linha-r1-r3::after,
+.gc-presente-final::before,
+.gc-linha-r3-r4 {
+    background: var(--ouro);
+}
+
+
+/* ==========================================
+   CORREÇÃO DE CAMADAS
+
+   As linhas ficam atrás das caixas,
+   mas acima do fundo.
+========================================== */
+
+.gc-rota-l-passado,
+.gc-rota-l-futuro,
+.gc-divisao-rotas,
+.gc-linha-v1-c2,
+.gc-linha-v1-v2,
+.gc-linha-c2-r2,
+.gc-linha-v2-c1,
+.gc-linha-c1-r1,
+.gc-linha-r2-r3,
+.gc-linha-r1-r3,
+.gc-presente-final::before,
+.gc-linha-r3-r4 {
+    z-index: 1;
+}
+
+
+/* ==========================================
+   PONTOS DE JUNÇÃO
+
+   Pequenos nós dourados deixam as
+   bifurcações visualmente precisas.
+========================================== */
+
+.gc-rota-l-passado::marker,
+.gc-rota-l-futuro::marker {
+    display: none;
+}
+
+
+/* ==========================================
+   MODAIS
+========================================== */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    z-index: 9999;
+}
+
+.modal.aberto {
+    display: flex;
+}
+
+.modal-conteudo {
+    position: relative;
+
+    width: 100%;
+    max-width: 650px;
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 30px 25px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(63, 152, 201, 0.10),
+            transparent 45%
+        ),
+        #14191e;
+
+    border: 1px solid rgba(224, 167, 77, 0.45);
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.55);
+}
+
+.modal-conteudo h2 {
+    margin-bottom: 10px;
+
+    text-align: center;
+
+    color: #f5f1e8;
+    letter-spacing: 2px;
+}
+
+.modal-descricao {
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    color: #aeb8c2;
+    line-height: 1.6;
+}
+
+.fechar-modal {
+    position: absolute;
+
+    top: 10px;
+    right: 14px;
+
+    width: 35px;
+    height: 35px;
+
+    background: transparent;
+    color: #e0a74d;
+
+    border: none;
+
+    font-size: 2rem;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   IMAGEM DO ALFABETO
+========================================== */
+
+.imagem-alfabeto {
+    width: 100%;
+
+    margin: 20px 0 25px;
+    padding: 10px;
+
+    background: rgba(0, 0, 0, 0.20);
+
+    border: 1px solid rgba(224, 167, 77, 0.35);
+    border-radius: 12px;
+}
+
+.imagem-alfabeto img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 7px;
+}
+
+
+/* ==========================================
+   GRADE DO ALFABETO
+========================================== */
+
+.grade-alfabeto {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+.item-alfabeto {
+    padding: 14px 8px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    background: rgba(63, 152, 201, 0.08);
+
+    border: 1px solid rgba(63, 152, 201, 0.30);
+    border-radius: 8px;
+}
+
+.item-alfabeto strong {
+    font-size: 1.25rem;
+    color: #f4f4f4;
+}
+
+.item-alfabeto span {
+    margin-top: 5px;
+
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    color: #e2b45c;
+}
+
+
+/* ==========================================
+   GUIA
+========================================== */
+
+.guia-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 18px 0;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+.guia-item:last-child {
+    border-bottom: none;
+}
+
+.guia-letra {
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 8px;
+
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.guia-letra.azul {
+    background: #3f98c9;
+    color: #071015;
+}
+
+.guia-letra.vermelho {
+    background: #c92f38;
+    color: white;
+}
+
+.guia-letra.dourado {
+    background: #d6a448;
+    color: #171008;
+}
+
+.guia-item h3 {
+    margin-bottom: 6px;
+    color: #f5f1e8;
+}
+
+.guia-item p {
+    color: #aeb8c2;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE
+
+   A geometria não é comprimida.
+   Em telas pequenas, ocorre rolagem horizontal
+   para preservar exatamente as conexões.
+========================================== */
+
+@media (max-width: 800px) {
+
+    .container {
+        padding: 25px 10px;
+    }
+
+    .resultado {
+        padding: 18px 5px;
+    }
+
+    .gc-molde {
+        min-width: 720px;
+
+        --corredor: 240px;
+        --largura-caixa: 110px;
+    }
+
+    .grade-alfabeto {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .cabecalho h1 {
+        letter-spacing: 3px;
+    }
+
+    .gc-molde {
+        min-width: 680px;
+
+        --corredor: 220px;
+        --largura-caixa: 105px;
+    }
+
+    .gc-caixa strong {
+        font-size: 1.7rem;
+    }
+
+    .botao-menu {
+        flex: 1;
+    }
+
+    .grade-alfabeto {
+        grid-template-columns: repeat(3, 1fr);
+    }
+} 
